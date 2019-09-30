@@ -1,9 +1,11 @@
 pipeline {
-    agent { docker { image 'golang' } }
+    agent { docker { image 'alpine' } }
     stages {
         stage('build') {
             steps {
                 sh 'go version'
+                sh 'ls -a'
+                echo "Hello World from Jenkins"
             }
         }
     }
